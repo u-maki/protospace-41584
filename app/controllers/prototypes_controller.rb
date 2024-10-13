@@ -12,4 +12,10 @@ class PrototypesController < ApplicationController
   def create
     
   end
+
+  private
+
+  def prototype_params
+    params.require(:prototype).permit(:catch_copy, :title).merge(user_id: current_user.id)
+  end
 end
