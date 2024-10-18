@@ -31,7 +31,7 @@ class PrototypesController < ApplicationController
 
 
   def update
-    f @prototype.update(prototype_params)
+    if @prototype.update(prototype_params)
       redirect_to prototype_path(@prototype)
     else
       render :edit, status: :unprocessable_entity
